@@ -41,7 +41,7 @@ public struct Destination {
 public class Map : MonoBehaviour {
   private static string[] map0 = new string[] {
     "Greenhouse|Roof",
-    "Bedroom1a|Bedroom1a|Bedroom1a|Bedroom1a|Elevator|Bedroom1a|Bedroom1a|Bedroom1a|Bedroom1a",
+    "Bedroom1a|Bedroom3a|Elevator|Bedroom1b|Bedroom3b",
     "Pool",
     "Lobby",
     "Kitchen|Elevator|Storage"
@@ -49,9 +49,9 @@ public class Map : MonoBehaviour {
   private static string[] map1 = new string[] {
     "Greenhouse|Roof",
     "Gym|Elevator|Office",
-    "Bedroom1|Bedroom3|Elevator|Bedroom2|Bedroom2",
+    "Bedroom1a|Bedroom3b|Elevator|Bedroom2b|Bedroom2c",
     "Pool",
-    "Bedroom3|Bedroom1|Elevator|Bedroom1|Bedroom1|Bedroom1|Bedroom1",
+    "Bedroom3a|Bedroom1a|Elevator|Bedroom1b|Bedroom1a|Bedroom1b|Bedroom1a",
     "Bar|Elevator|Restaurant",
     "Lobby",
     "Parking",
@@ -63,13 +63,22 @@ public class Map : MonoBehaviour {
   public void initializeMap () {
     float highest = 0;
     float leftmost = 0;
-    for (int i = map0.Length - 1; i >= 0; i--) {
-      int h = map0.Length - 1 - i;
+    for (int i = map1.Length - 1; i >= 0; i--) {
+      int h = map1.Length - 1 - i;
       floors[h] = new List<Room>();
-      string[] roomsOnFloor = map0[i].Split("|"[0]);
+      Debug.Log(h);
+      string[] roomsOnFloor = map1[i].Split("|"[0]);
       for (int j = 0; j < roomsOnFloor.Length; j++) {
-        if (j == 0 || j == roomsOnFloor.Length - 1) {
+        if (j == 0) {
           //add stairs
+          Vector3 stairpos = new Vector3(leftmost, highest, 0);
+          GameObject stairpfab = Resources.Load("Room Prefabs/Stairs") as GameObject;
+          GameObject stairgo = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
+          leftmost += stairgo.GetComponent<SpriteRenderer>().bounds.size.x;
+          if(roomsOnFloor[j] == "Lobby" || roomsOnFloor[j] == "Parking" || roomsOnFloor[j] == "Pool") {
+            stairpos.y += stairgo.GetComponent<SpriteRenderer>().bounds.size.y;
+            GameObject stairgo2 = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
+          }
         }
         Vector3 pos = new Vector3(leftmost, highest, 0);
         GameObject pfab = Resources.Load("Room Prefabs/"+roomsOnFloor[j]) as GameObject;
@@ -82,16 +91,16 @@ public class Map : MonoBehaviour {
         rm.height = sp.size.y;
         rm.floor = i;
         floors[h].Add(rm);
-        leftmost += rm.width;
+        leftmost += rm.width + 0.2f;
         //add elevator
       }
-      highest += floors[h][0].height;
+      highest += floors[h][0].height + 0.2f;
       leftmost = 0;
     }
   }
 
   void Start () {
-    floors = new List<Room>[map0.Length];
+    floors = new List<Room>[map1.Length];
     initializeMap();
   }
 
