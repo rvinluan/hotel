@@ -1,26 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Person : MonoBehaviour {
   public float walkingSpeed = 1f;
-  private Destination[] route;
+  private List<Destination> route = new List<Destination>();
   private int currentStop;
   private int timer;
   private Activity currentlyDoing;
   private Random r = new Random();
 
   Destination generateRandomDestination() {
-    Array rooms = Enum.GetValues(typeof(Room));
-    Array activities = Enum.GetValues(typeof(Activity));
-    Room randomRoom = (Room)rooms.GetValue(r.Next(values.Length));
-    // Activity randomActivity = (Activity)activities.GetValue(r.Next(values.Length));
+    System.Array rooms = System.Enum.GetValues(typeof(Room));
+    System.Array activities = System.Enum.GetValues(typeof(Activity));
+    Room randomRoom = (Room)Random.Range(0, rooms.Length);
+    Destination d = new Destination();
+    d.room = randomRoom;
+    d.activity = Activity.Nothing;
+    d.time = 100;
+    return d;
   }
 
 	// Use this for initialization
 	void Start () {
 	 currentStop = 0;
    for(int i = 0; i <= 5; i++) {
-
+    route.Add(generateRandomDestination());
    }
 	}
 	
