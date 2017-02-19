@@ -66,12 +66,11 @@ public class Map : MonoBehaviour {
     for (int i = map1.Length - 1; i >= 0; i--) {
       int h = map1.Length - 1 - i;
       floors[h] = new List<Room>();
-      Debug.Log(h);
       string[] roomsOnFloor = map1[i].Split("|"[0]);
       for (int j = 0; j < roomsOnFloor.Length; j++) {
         if (j == 0) {
           //add stairs
-          Vector3 stairpos = new Vector3(leftmost, highest, 0);
+          Vector3 stairpos = new Vector3(leftmost, highest, 5);
           GameObject stairpfab = Resources.Load("Room Prefabs/Stairs") as GameObject;
           GameObject stairgo = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
           leftmost += stairgo.GetComponent<SpriteRenderer>().bounds.size.x;
@@ -80,16 +79,16 @@ public class Map : MonoBehaviour {
             GameObject stairgo2 = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
           }
         }
-        Vector3 pos = new Vector3(leftmost, highest, 0);
+        Vector3 pos = new Vector3(leftmost, highest, 5);
         GameObject pfab = Resources.Load("Room Prefabs/"+roomsOnFloor[j]) as GameObject;
         GameObject go = Instantiate(pfab, pos, Quaternion.identity) as GameObject;
         Room rm = go.GetComponent<Room>();
         rm.roomID = "Test";
-        rm.type = RoomType.Lobby;
+        rm.type = (RoomType)System.Enum.Parse(typeof(RoomType), roomsOnFloor[j]);
         Bounds sp = rm.gameObject.GetComponent<SpriteRenderer>().bounds;
         rm.width = sp.size.x;
         rm.height = sp.size.y;
-        rm.floor = i;
+        rm.floor = h;
         floors[h].Add(rm);
         leftmost += rm.width + 0.2f;
         //add elevator
@@ -99,9 +98,12 @@ public class Map : MonoBehaviour {
     }
   }
 
-  void Start () {
+  void Awake () {
     floors = new List<Room>[map1.Length];
     initializeMap();
+  }
+
+  void Start () {
   }
 
   void Update () {
