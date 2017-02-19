@@ -6,10 +6,14 @@ public enum RoomType {
   Greenhouse,
   Gym,
   Office,
-  Bedroom1,
-  Bedroom2,
-  Bedroom3,
-  Bedroom4,
+  Bedroom1a,
+  Bedroom1b,
+  Bedroom2a,
+  Bedroom2b,
+  Bedroom2c,
+  Bedroom2d,
+  Bedroom3a,
+  Bedroom3b,
   Pool,
   Kitchen,
   Storage,
@@ -36,11 +40,11 @@ public struct Destination {
 
 public class Map : MonoBehaviour {
   private static string[] map0 = new string[] {
+    "Greenhouse|Roof",
+    "Bedroom1a|Bedroom1a|Bedroom1a|Bedroom1a|Elevator|Bedroom1a|Bedroom1a|Bedroom1a|Bedroom1a",
+    "Pool",
     "Lobby",
-    "Lobby",
-    "Lobby",
-    "Lobby",
-    "Lobby"
+    "Kitchen|Elevator|Storage"
   };
   private static string[] map1 = new string[] {
     "Greenhouse|Roof",
@@ -68,7 +72,7 @@ public class Map : MonoBehaviour {
           //add stairs
         }
         Vector3 pos = new Vector3(leftmost, highest, 0);
-        GameObject pfab = Resources.Load("TestFloor") as GameObject;
+        GameObject pfab = Resources.Load("Room Prefabs/"+roomsOnFloor[j]) as GameObject;
         GameObject go = Instantiate(pfab, pos, Quaternion.identity) as GameObject;
         Room rm = go.GetComponent<Room>();
         rm.roomID = "Test";
@@ -78,6 +82,7 @@ public class Map : MonoBehaviour {
         rm.height = sp.size.y;
         rm.floor = i;
         floors[h].Add(rm);
+        leftmost += rm.width;
         //add elevator
       }
       highest += floors[h][0].height;
