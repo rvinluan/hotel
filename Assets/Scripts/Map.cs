@@ -91,6 +91,17 @@ public class Map : MonoBehaviour {
         rm.floor = h;
         floors[h].Add(rm);
         leftmost += rm.width + 0.2f;
+        if (j == roomsOnFloor.Length - 1) {
+          //add end stairs
+          Vector3 stairpos = new Vector3(leftmost, highest, 5);
+          GameObject stairpfab = Resources.Load("Room Prefabs/Stairs") as GameObject;
+          GameObject stairgo = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
+          leftmost += stairgo.GetComponent<SpriteRenderer>().bounds.size.x;
+          if(roomsOnFloor[j] == "Lobby" || roomsOnFloor[j] == "Parking" || roomsOnFloor[j] == "Pool") {
+            stairpos.y += stairgo.GetComponent<SpriteRenderer>().bounds.size.y;
+            GameObject stairgo2 = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
+          }
+        }
         //add elevator
       }
       highest += floors[h][0].height + 0.2f;

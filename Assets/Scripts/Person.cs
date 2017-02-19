@@ -18,7 +18,7 @@ public class Person : MonoBehaviour {
     Destination d = new Destination();
     d.room = randomRoom;
     d.activity = Activity.Nothing;
-    d.time = 100;
+    d.time = 300;
     return d;
   }
 
@@ -68,7 +68,13 @@ public class Person : MonoBehaviour {
             }
           } else {
             //walk towards stairs
-            transform.Translate(-walkingSpeed, 0, 0);
+            if (transform.position.x <= 22.5) {
+              //going to left stairs
+              transform.Translate(-walkingSpeed, 0, 0);
+            } else {
+              //going to right stairs
+              transform.Translate(walkingSpeed, 0, 0);
+            }
           }
         } else {
           //walk towards destination
@@ -103,7 +109,7 @@ public class Person : MonoBehaviour {
   }
 
   public bool currentlyOnStairs() {
-    return transform.position.x < 3.75/2;
+    return transform.position.x < 3.75/2 || transform.position.x > (45.00 - (3.75/2));
   }
 
   public bool reachedDestination(Room destination) {
