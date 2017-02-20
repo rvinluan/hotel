@@ -26,7 +26,6 @@ public class Person : MonoBehaviour {
 	void Start () {
     map = GameObject.Find("Map").GetComponent<Map>();
     currentStop = -1;
-    currentFloor = 0;
     currentlyDoing = Activity.Transit;
     timer = 0;
     for(int i = 0; i <= 5; i++) {
@@ -59,12 +58,13 @@ public class Person : MonoBehaviour {
               currentFloor = destination.floor;
               return;
             }
+            //running on stairs because stairs are boring
             if (currentFloor > destination.floor) {
               //going down stairs
-              transform.Translate(0, -walkingSpeed, 0);
+              transform.Translate(0, -walkingSpeed*5, 0);
             } else {
               //going up stairs
-              transform.Translate(0, walkingSpeed, 0);
+              transform.Translate(0, walkingSpeed*5, 0);
             }
           } else {
             //walk towards stairs

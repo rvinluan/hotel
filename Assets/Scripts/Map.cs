@@ -59,6 +59,9 @@ public class Map : MonoBehaviour {
   };
 
   public List<Room>[] floors;
+  public List<Room> allRooms;
+  private Person theOne = null;
+  private GameObject stairwell = null; 
 
   public void initializeMap () {
     float highest = 0;
@@ -73,6 +76,7 @@ public class Map : MonoBehaviour {
           Vector3 stairpos = new Vector3(leftmost, highest, 5);
           GameObject stairpfab = Resources.Load("Room Prefabs/Stairs") as GameObject;
           GameObject stairgo = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
+          stairwell = stairgo;
           leftmost += stairgo.GetComponent<SpriteRenderer>().bounds.size.x;
           if(roomsOnFloor[j] == "Lobby" || roomsOnFloor[j] == "Parking" || roomsOnFloor[j] == "Pool") {
             stairpos.y += stairgo.GetComponent<SpriteRenderer>().bounds.size.y;
@@ -90,6 +94,7 @@ public class Map : MonoBehaviour {
         rm.height = sp.size.y;
         rm.floor = h;
         floors[h].Add(rm);
+        allRooms.Add(rm);
         leftmost += rm.width + 0.2f;
         if (j == roomsOnFloor.Length - 1) {
           //add end stairs
@@ -118,5 +123,39 @@ public class Map : MonoBehaviour {
   }
 
   void Update () {
+    if(theOne == null) {
+      theOne = GameObject.Find("PersonManager").GetComponent<PersonManager>().theOne;
+    }
+    for(int i = 0; i < allRooms.Count; i++) {
+      AudioSource audio = allRooms[i].GetComponent<AudioSource>();
+      audio.Pause();
+    }
+    for(int j = 0; j < floors[theOne.currentFloor].Count; j++) {
+      Room rm = floors[theOne.currentFloor][j];
+      AudioSource audio = rm.GetComponent<AudioSource>();
+      Vector3 roomCenter = new Vector3(rm.transform.position.x + rm.width/2, rm.transform.position.y, 0);
+      float dist = Vector3.Distance(roomCenter, theOne.transform.position);
+      if(dist < 11) {
+        if(!audio.isPlaying) {
+          audio.Play(); 
+        }
+        audio.volume = Mathf.Lerp(1, 0.01f, dist/11);
+      } else {
+        audio.Pause();
+      }
+    }
+    //always play the audio from the room you're in;
+    if(theOne.findRoomPlayerIsIn() == null) {
+      if(!stairwell.GetComponent<AudioSource>().isPlaying) {
+        stairwell.GetComponent<AudioSource>().Play();
+      }
+    } else {
+      AudioSource a = theOne.findRoomPlayerIsIn().GetComponent<AudioSource>();
+      if(!a.isPlaying) {
+        a.Play();
+        a.volume = 1;
+      }
+      stairwell.GetComponent<AudioSource>().Pause();
+    }
   }
 }
