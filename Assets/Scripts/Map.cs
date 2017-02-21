@@ -41,7 +41,7 @@ public struct Destination {
 public class Map : MonoBehaviour {
   private static string[] map0 = new string[] {
     "Greenhouse|Roof",
-    "Bedroom1a|Bedroom3a|Elevator|Bedroom1b|Bedroom3b",
+    "Bedroom1a|Bedroom3a|Elevator|Bedroom1a|Bedroom3a",
     "Pool",
     "Lobby",
     "Kitchen|Elevator|Storage"
