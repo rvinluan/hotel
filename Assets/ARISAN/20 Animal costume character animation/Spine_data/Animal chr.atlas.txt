@@ -1,0 +1,1005 @@
+
+Animal chr.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01. bear/bear
+  rotate: false
+  xy: 2, 764
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+01. bear/bear_arm_l
+  rotate: false
+  xy: 971, 962
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+01. bear/bear_arm_r
+  rotate: false
+  xy: 401, 104
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+01. bear/bear_body
+  rotate: false
+  xy: 776, 945
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+01. bear/bear_leg_l
+  rotate: false
+  xy: 507, 43
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+01. bear/bear_leg_r
+  rotate: false
+  xy: 338, 47
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+01. bear/bear_tail
+  rotate: false
+  xy: 715, 142
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+02. cat/cat
+  rotate: false
+  xy: 2, 506
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+02. cat/cat_arm_l
+  rotate: false
+  xy: 404, 187
+  size: 53, 59
+  orig: 53, 59
+  offset: 0, 0
+  index: -1
+02. cat/cat_arm_r
+  rotate: false
+  xy: 446, 104
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+02. cat/cat_body
+  rotate: false
+  xy: 2, 21
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+02. cat/cat_leg_l
+  rotate: true
+  xy: 158, 17
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+02. cat/cat_leg_r
+  rotate: true
+  xy: 841, 697
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+02. cat/cat_tail
+  rotate: true
+  xy: 375, 104
+  size: 65, 24
+  orig: 65, 24
+  offset: 0, 0
+  index: -1
+03. chicken/chicken
+  rotate: false
+  xy: 260, 764
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+03. chicken/chicken_arm_l
+  rotate: false
+  xy: 776, 654
+  size: 55, 58
+  orig: 55, 58
+  offset: 0, 0
+  index: -1
+03. chicken/chicken_arm_r
+  rotate: false
+  xy: 781, 191
+  size: 47, 56
+  orig: 47, 56
+  offset: 0, 0
+  index: -1
+03. chicken/chicken_body
+  rotate: false
+  xy: 144, 171
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+03. chicken/chicken_leg_l
+  rotate: true
+  xy: 219, 17
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+03. chicken/chicken_leg_r
+  rotate: true
+  xy: 900, 702
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+03. chicken/chicken_tail
+  rotate: false
+  xy: 451, 28
+  size: 47, 17
+  orig: 47, 17
+  offset: 0, 0
+  index: -1
+04. cow/cow
+  rotate: false
+  xy: 2, 248
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+04. cow/cow_arm_l
+  rotate: false
+  xy: 971, 902
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+04. cow/cow_arm_r
+  rotate: false
+  xy: 491, 104
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+04. cow/cow_body
+  rotate: false
+  xy: 776, 868
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+04. cow/cow_leg_l
+  rotate: true
+  xy: 959, 701
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+04. cow/cow_leg_r
+  rotate: false
+  xy: 842, 479
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+04. cow/cow_tail
+  rotate: false
+  xy: 2, 8
+  size: 64, 11
+  orig: 64, 11
+  offset: 0, 0
+  index: -1
+05. duck/duck
+  rotate: false
+  xy: 260, 506
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+05. duck/duck_arm_l
+  rotate: false
+  xy: 841, 731
+  size: 55, 58
+  orig: 55, 58
+  offset: 0, 0
+  index: -1
+05. duck/duck_arm_r
+  rotate: true
+  xy: 959, 733
+  size: 47, 56
+  orig: 47, 56
+  offset: 0, 0
+  index: -1
+05. duck/duck_body
+  rotate: false
+  xy: 841, 945
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+05. duck/duck_leg_l
+  rotate: false
+  xy: 829, 405
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+05. duck/duck_leg_r
+  rotate: true
+  xy: 832, 265
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+05. duck/duck_tail
+  rotate: false
+  xy: 538, 169
+  size: 23, 16
+  orig: 23, 16
+  offset: 0, 0
+  index: -1
+06. elephant/elephant
+  rotate: false
+  xy: 518, 764
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+06. elephant/elephant_arm_l
+  rotate: false
+  xy: 971, 842
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+06. elephant/elephant_arm_r
+  rotate: false
+  xy: 158, 49
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+06. elephant/elephant_body
+  rotate: false
+  xy: 67, 21
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+06. elephant/elephant_leg_l
+  rotate: false
+  xy: 829, 344
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+06. elephant/elephant_leg_r
+  rotate: true
+  xy: 832, 231
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+06. elephant/elephant_tail
+  rotate: false
+  xy: 68, 8
+  size: 64, 11
+  orig: 64, 11
+  offset: 0, 0
+  index: -1
+07. giraffe/giraffe
+  rotate: false
+  xy: 260, 248
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+07. giraffe/giraffe__arm_l
+  rotate: false
+  xy: 776, 593
+  size: 53, 59
+  orig: 53, 59
+  offset: 0, 0
+  index: -1
+07. giraffe/giraffe_arm_r
+  rotate: false
+  xy: 203, 49
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+07. giraffe/giraffe_body
+  rotate: false
+  xy: 209, 171
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+07. giraffe/giraffe_leg_l
+  rotate: true
+  xy: 830, 199
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+07. giraffe/giraffe_leg_r
+  rotate: true
+  xy: 900, 668
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+07. giraffe/giraffe_tail
+  rotate: true
+  xy: 876, 586
+  size: 64, 11
+  orig: 64, 11
+  offset: 0, 0
+  index: -1
+08. hippopotamus/hippopotamus
+  rotate: false
+  xy: 518, 506
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+08. hippopotamus/hippopotamus__arm_l
+  rotate: false
+  xy: 971, 782
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+08. hippopotamus/hippopotamus_arm_r
+  rotate: false
+  xy: 248, 49
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+08. hippopotamus/hippopotamus_body
+  rotate: true
+  xy: 144, 106
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+08. hippopotamus/hippopotamus_leg_l
+  rotate: true
+  xy: 830, 167
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+08. hippopotamus/hippopotamus_leg_r
+  rotate: false
+  xy: 889, 577
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+08. hippopotamus/hippopotamus_tail
+  rotate: true
+  xy: 876, 495
+  size: 23, 10
+  orig: 23, 10
+  offset: 0, 0
+  index: -1
+09. horse/horse
+  rotate: false
+  xy: 518, 248
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+09. horse/horse_arm_l
+  rotate: false
+  xy: 776, 472
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+09. horse/horse_arm_r
+  rotate: false
+  xy: 293, 49
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+09. horse/horse_body
+  rotate: false
+  xy: 776, 791
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+09. horse/horse_leg_l
+  rotate: true
+  xy: 959, 669
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+09. horse/horse_leg_r
+  rotate: false
+  xy: 889, 518
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+09. horse/horse_tail
+  rotate: false
+  xy: 451, 5
+  size: 58, 21
+  orig: 58, 21
+  offset: 0, 0
+  index: -1
+10. leopard/leopard_arm_l
+  rotate: true
+  xy: 898, 736
+  size: 53, 59
+  orig: 53, 59
+  offset: 0, 0
+  index: -1
+10. leopard/leopard_arm_r
+  rotate: false
+  xy: 372, 47
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+10. leopard/leopard_body
+  rotate: false
+  xy: 841, 868
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+10. leopard/leopard_leg_l
+  rotate: true
+  xy: 890, 636
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+10. leopard/leopard_leg_r
+  rotate: false
+  xy: 923, 516
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+10. leopard/leopard_tail
+  rotate: false
+  xy: 404, 161
+  size: 65, 24
+  orig: 65, 24
+  offset: 0, 0
+  index: -1
+11. lion/lion_arm_l
+  rotate: false
+  xy: 569, 188
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+11. lion/lion_arm_r
+  rotate: false
+  xy: 417, 47
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+11. lion/lion_body
+  rotate: false
+  xy: 906, 945
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+11. lion/lion_leg_l
+  rotate: false
+  xy: 923, 575
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+11. lion/lion_leg_r
+  rotate: false
+  xy: 955, 578
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+11. lion/lion_tail
+  rotate: true
+  xy: 829, 466
+  size: 64, 11
+  orig: 64, 11
+  offset: 0, 0
+  index: -1
+12. milkcow/milk cow_arm_l
+  rotate: false
+  xy: 459, 187
+  size: 53, 59
+  orig: 53, 59
+  offset: 0, 0
+  index: -1
+12. milkcow/milk cow_arm_r
+  rotate: false
+  xy: 462, 47
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+12. milkcow/milk cow_body
+  rotate: false
+  xy: 274, 171
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+12. milkcow/milk cow_leg_l
+  rotate: false
+  xy: 861, 418
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+12. milkcow/milk cow_leg_r
+  rotate: false
+  xy: 989, 578
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+12. milkcow/milk cow_tail
+  rotate: true
+  xy: 876, 520
+  size: 64, 11
+  orig: 64, 11
+  offset: 0, 0
+  index: -1
+13. monkey/monkey_arm_l
+  rotate: false
+  xy: 776, 412
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+13. monkey/monkey_arm_r
+  rotate: true
+  xy: 280, 4
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+13. monkey/monkey_body
+  rotate: true
+  xy: 221, 106
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+13. monkey/monkey_leg_l
+  rotate: false
+  xy: 861, 357
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+13. monkey/monkey_leg_r
+  rotate: false
+  xy: 957, 519
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+13. monkey/monkey_tail
+  rotate: false
+  xy: 471, 161
+  size: 65, 24
+  orig: 65, 24
+  offset: 0, 0
+  index: -1
+14. panda/panda_arm_l
+  rotate: false
+  xy: 776, 532
+  size: 53, 59
+  orig: 53, 59
+  offset: 0, 0
+  index: -1
+14. panda/panda_arm_r
+  rotate: true
+  xy: 337, 2
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+14. panda/panda_body
+  rotate: false
+  xy: 776, 714
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+19. sheep/sheep_body
+  rotate: false
+  xy: 776, 714
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+14. panda/panda_leg_l
+  rotate: true
+  xy: 569, 156
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+14. panda/panda_leg_r
+  rotate: false
+  xy: 752, 129
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+14. panda/panda_tail
+  rotate: false
+  xy: 634, 108
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+15. penguin/penguin_arm_l
+  rotate: false
+  xy: 622, 188
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+15. penguin/penguin_arm_r
+  rotate: true
+  xy: 776, 249
+  size: 41, 54
+  orig: 41, 54
+  offset: 0, 0
+  index: -1
+15. penguin/penguin_body
+  rotate: false
+  xy: 841, 791
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+15. penguin/penguin_leg_l
+  rotate: true
+  xy: 630, 156
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+15. penguin/penguin_leg_r
+  rotate: false
+  xy: 786, 132
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+15. penguin/penguin_tail
+  rotate: false
+  xy: 861, 345
+  size: 23, 10
+  orig: 23, 10
+  offset: 0, 0
+  index: -1
+16. pig/pig_arm_l
+  rotate: false
+  xy: 776, 352
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+16. pig/pig_arm_r
+  rotate: true
+  xy: 394, 2
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+16. pig/pig_body
+  rotate: false
+  xy: 906, 868
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+16. pig/pig_leg_l
+  rotate: true
+  xy: 691, 156
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+16. pig/pig_leg_r
+  rotate: true
+  xy: 820, 133
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+16. pig/pig_tail
+  rotate: false
+  xy: 500, 28
+  size: 31, 13
+  orig: 31, 13
+  offset: 0, 0
+  index: -1
+17. rabbit/rabbit_arm_l
+  rotate: false
+  xy: 675, 188
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+17. rabbit/rabbit_arm_r
+  rotate: true
+  xy: 833, 652
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+17. rabbit/rabbit_body
+  rotate: false
+  xy: 906, 791
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+17. rabbit/rabbit_leg_l
+  rotate: true
+  xy: 959, 637
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+17. rabbit/rabbit_leg_r
+  rotate: true
+  xy: 536, 122
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+17. rabbit/rabbit_tail
+  rotate: false
+  xy: 539, 49
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+18. rhinoceros/rhinoceros_arm_l
+  rotate: false
+  xy: 776, 292
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+18. rhinoceros/rhinoceros_arm_r
+  rotate: false
+  xy: 831, 595
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+18. rhinoceros/rhinoceros_body
+  rotate: false
+  xy: 339, 171
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+18. rhinoceros/rhinoceros_leg_l
+  rotate: false
+  xy: 991, 517
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+18. rhinoceros/rhinoceros_leg_r
+  rotate: true
+  xy: 595, 122
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+18. rhinoceros/rhinoceros_tail
+  rotate: true
+  xy: 879, 142
+  size: 23, 10
+  orig: 23, 10
+  offset: 0, 0
+  index: -1
+19. sheep/sheep_arm_l
+  rotate: false
+  xy: 728, 188
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+19. sheep/sheep_arm_r
+  rotate: false
+  xy: 831, 538
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+19. sheep/sheep_leg_l
+  rotate: true
+  xy: 654, 124
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+19. sheep/sheep_leg_r
+  rotate: false
+  xy: 539, 63
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+19. sheep/sheep_tail
+  rotate: false
+  xy: 556, 49
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+20. tiger/tiger_arm_l
+  rotate: false
+  xy: 514, 187
+  size: 53, 59
+  orig: 53, 59
+  offset: 0, 0
+  index: -1
+20. tiger/tiger_arm_r
+  rotate: true
+  xy: 829, 299
+  size: 43, 55
+  orig: 43, 55
+  offset: 0, 0
+  index: -1
+20. tiger/tiger_body
+  rotate: true
+  xy: 298, 106
+  size: 63, 75
+  orig: 63, 75
+  offset: 0, 0
+  index: -1
+20. tiger/tiger_leg_l
+  rotate: true
+  xy: 573, 90
+  size: 30, 59
+  orig: 30, 59
+  offset: 0, 0
+  index: -1
+20. tiger/tiger_leg_r
+  rotate: true
+  xy: 573, 56
+  size: 32, 57
+  orig: 32, 57
+  offset: 0, 0
+  index: -1
+20. tiger/tiger_tail
+  rotate: true
+  xy: 132, 31
+  size: 65, 24
+  orig: 65, 24
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 2, 98
+  size: 140, 148
+  orig: 140, 148
+  offset: 0, 0
+  index: -1
+
+Animal chr2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+10. leopard/leopard
+  rotate: false
+  xy: 2, 518
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+11. lion/lion
+  rotate: false
+  xy: 2, 260
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+12. milkcow/milk cow
+  rotate: false
+  xy: 260, 518
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+13. monkey/monkey
+  rotate: false
+  xy: 2, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+14. panda/panda
+  rotate: false
+  xy: 260, 260
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+15. penguin/penguin
+  rotate: false
+  xy: 518, 518
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+16. pig/pig
+  rotate: false
+  xy: 260, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+17. rabbit/rabbit
+  rotate: false
+  xy: 518, 260
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+18. rhinoceros/rhinoceros
+  rotate: false
+  xy: 518, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+
+Animal chr3.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+19. sheep/sheep
+  rotate: false
+  xy: 2, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+20. tiger/tiger
+  rotate: false
+  xy: 260, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

@@ -1,15 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Spine.Unity;
+
+public enum SkinType {
+  bear,
+  cat,
+  chicken,
+  cow,
+  duck,
+  elephant,
+  giraffe,
+  hippopotamus,
+  horse,
+  leopard,
+  lion,
+  milkcow,
+  monkey,
+  panda,
+  penguin,
+  pig,
+  rabbit,
+  rhinoceros,
+  sheep,
+  tiger
+}
 
 public class Person : MonoBehaviour {
-  public float walkingSpeed = 0.05f;
+  public float walkingSpeed = 0.01f;
   private List<Destination> route = new List<Destination>();
   public int currentStop;
   public int currentFloor;
   public int timer;
   public Activity currentlyDoing;
   private Map map;
+  private SkeletonAnimation skeletonAnimation;
+  public Spine.Skeleton skeleton;
+  private bool facingLeft = true;
+  public bool isTheOne = false;
 
   Destination generateRandomDestination() {
     int r = Random.Range(0, map.floors.Length);
@@ -24,6 +52,9 @@ public class Person : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+    skeletonAnimation = GetComponent<SkeletonAnimation>();
+    skeleton = skeletonAnimation.Skeleton;
+    skeleton.SetSkin( ((SkinType)Random.Range(0, 20)).ToString() );
     map = GameObject.Find("Map").GetComponent<Map>();
     currentStop = -1;
     currentlyDoing = Activity.Transit;
@@ -35,7 +66,9 @@ public class Person : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	 FollowRoute();
+    if(!GameStateManager.timeFrozen && !isTheOne) {
+      FollowRoute();
+    }
 	}
 
   void FollowRoute () {
@@ -51,6 +84,7 @@ public class Person : MonoBehaviour {
         }
         currentlyDoing = route[currentStop].activity;
         //start doing your thing!
+        skeletonAnimation.AnimationName = "idle";
       } else { //if you're not at your destination yet
         if (currentFloor != destination.floor) {
           if (currentlyOnStairs()) {
@@ -66,15 +100,20 @@ public class Person : MonoBehaviour {
               //going up stairs
               transform.Translate(0, walkingSpeed*5, 0);
             }
+            skeletonAnimation.AnimationName = "run";
           } else {
             //walk towards stairs
             if (transform.position.x <= 22.5) {
               //going to left stairs
               transform.Translate(-walkingSpeed, 0, 0);
+              facingLeft = true;
             } else {
               //going to right stairs
               transform.Translate(walkingSpeed, 0, 0);
+              facingLeft = false;
             }
+            skeleton.flipX = !facingLeft;
+            skeletonAnimation.AnimationName = "walk";
           }
         } else {
           //walk towards destination
@@ -83,6 +122,9 @@ public class Person : MonoBehaviour {
           Vector3 delta = roomCenter - transform.position;
           delta = Vector3.ClampMagnitude(delta, walkingSpeed);
           transform.Translate(delta.x, 0, 0);
+          facingLeft = delta.x < 0;
+          skeleton.flipX = !facingLeft;
+          skeletonAnimation.AnimationName = "walk";
         }
       }
     } else {
@@ -92,6 +134,7 @@ public class Person : MonoBehaviour {
       } else {
         timer++;
         //whatever animation
+        skeletonAnimation.AnimationName = "idle";
       }
     }
   }
