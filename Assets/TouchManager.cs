@@ -45,8 +45,8 @@ public class TouchManager : MonoBehaviour {
         modal.transform.parent = hit.gameObject.transform;
         StartCoroutine(growCongratsModal());
         thePick = hit.gameObject;
-        thePick.transform.Translate(0,0,-1f, Space.World);
-        GameStateManager.timeFrozen = true;
+        thePick.transform.Translate(0,0,-8f, Space.World);
+        // GameStateManager.timeFrozen = true;
         if(thePick.GetComponent<Person>().isTheOne == true) {
           modal.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load("congrats-yes", typeof(Sprite));
         }
@@ -60,14 +60,14 @@ public class TouchManager : MonoBehaviour {
       Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, location, t);
       yield return null;
     }
-    Camera.main.transform.parent = thePick.transform;
+    // Camera.main.transform.parent = thePick.transform;
   }
 
   public IEnumerator growCongratsModal() {
     float t = 0.0f;
     while(t < 1.0) {
       t += Time.deltaTime * 2;
-      float scaleValue = Mathf.Lerp(0f, 2.0f, t);
+      float scaleValue = Mathf.Lerp(0f, 1.0f, t);
       modal.transform.localScale = new Vector3(scaleValue, scaleValue, scaleValue);
       yield return null;
     }

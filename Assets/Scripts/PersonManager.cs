@@ -23,7 +23,7 @@ public class PersonManager : MonoBehaviour {
     people.Add(pp);
    }
    theOne = people[ Random.Range(0, people.Count) ];
-   theOne.isTheOne = true;
+   theOne.isTheOne = true;  
 	}
 	
 	// Update is called once per frame

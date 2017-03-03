@@ -42,7 +42,10 @@ public class Map : MonoBehaviour {
   private static string[] map0 = new string[] {
     "Greenhouse|Roof",
     "Bedroom1a|Bedroom3a|Elevator|Bedroom1a|Bedroom3a",
+    "Gym|Elevator|Restaurant",
+    "Office|Elevator|Bedroom2a|Bedroom2a",
     "Pool",
+    "Bar|Elevator|GameRoom",
     "Lobby",
     "Kitchen|Elevator|Storage"
   };
@@ -58,6 +61,8 @@ public class Map : MonoBehaviour {
     "Kitchen|Elevator|Storage"
   };
 
+  private static string[] currentMap = map0;
+
   public List<Room>[] floors;
   public List<Room> allRooms;
   private Person theOne = null;
@@ -66,18 +71,24 @@ public class Map : MonoBehaviour {
   public void initializeMap () {
     float highest = 0;
     float leftmost = 0;
-    for (int i = map1.Length - 1; i >= 0; i--) {
-      int h = map1.Length - 1 - i;
+    for (int i = currentMap.Length - 1; i >= 0; i--) {
+      int h = currentMap.Length - 1 - i;
       floors[h] = new List<Room>();
-      string[] roomsOnFloor = map1[i].Split("|"[0]);
+      string[] roomsOnFloor = currentMap[i].Split("|"[0]);
       for (int j = 0; j < roomsOnFloor.Length; j++) {
         if (j == 0) {
+          //not on the roof though:
           //add stairs
           Vector3 stairpos = new Vector3(leftmost, highest, 5);
-          GameObject stairpfab = Resources.Load("Room Prefabs/Stairs") as GameObject;
+          GameObject stairpfab = Resources.Load("Room Prefabs/StairsLeft") as GameObject;
           GameObject stairgo = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
-          stairwell = stairgo;
           leftmost += stairgo.GetComponent<SpriteRenderer>().bounds.size.x;
+          if(i == currentMap.Length - 1) {
+            stairwell = stairgo;
+          }
+          if (i == 0) {
+            Object.Destroy(stairgo);
+          }
           if(roomsOnFloor[j] == "Lobby" || roomsOnFloor[j] == "Parking" || roomsOnFloor[j] == "Pool") {
             stairpos.y += stairgo.GetComponent<SpriteRenderer>().bounds.size.y;
             GameObject stairgo2 = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
@@ -95,27 +106,30 @@ public class Map : MonoBehaviour {
         rm.floor = h;
         floors[h].Add(rm);
         allRooms.Add(rm);
-        leftmost += rm.width + 0.2f;
+        leftmost += rm.width;
         if (j == roomsOnFloor.Length - 1) {
           //add end stairs
           Vector3 stairpos = new Vector3(leftmost, highest, 5);
-          GameObject stairpfab = Resources.Load("Room Prefabs/Stairs") as GameObject;
+          GameObject stairpfab = Resources.Load("Room Prefabs/StairsRight") as GameObject;
           GameObject stairgo = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
           leftmost += stairgo.GetComponent<SpriteRenderer>().bounds.size.x;
           if(roomsOnFloor[j] == "Lobby" || roomsOnFloor[j] == "Parking" || roomsOnFloor[j] == "Pool") {
             stairpos.y += stairgo.GetComponent<SpriteRenderer>().bounds.size.y;
             GameObject stairgo2 = Instantiate(stairpfab, stairpos, Quaternion.identity) as GameObject;
           }
+          if (i == 0) {
+            Object.Destroy(stairgo);
+          }
         }
         //add elevator
       }
-      highest += floors[h][0].height + 0.2f;
+      highest += floors[h][0].height;
       leftmost = 0;
     }
   }
 
   void Awake () {
-    floors = new List<Room>[map1.Length];
+    floors = new List<Room>[currentMap.Length];
     initializeMap();
   }
 
