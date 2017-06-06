@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class TouchManager : MonoBehaviour {
   GameStateManager gsm;
   public GameObject congratsObjectPrefab;
   GameObject modal;
   private GameObject thePick;
+	public float timeToGameOver;
+	private float timer;
+	private bool foundThePick;
+	//private bool loadGameOver;
 
 	// Use this for initialization
 	void Start () {
 		GameObject.Find("GameStateManager").GetComponent<GameStateManager>();
+		timer = timeToGameOver;
+		//loadGameOver = false;
 	}
 	
 	// Update is called once per frame
@@ -26,6 +34,14 @@ public class TouchManager : MonoBehaviour {
     if(Input.GetMouseButtonDown(0)) {
       registerClick(Input.mousePosition);
     }
+	if (foundThePick) {
+			timer -= Time.deltaTime;
+			Debug.Log (timer);
+			if (timer < 0) {
+				SceneManager.LoadScene (2);
+		}
+
+	}
 	}
 
   void registerClick(Vector3 pos) {
@@ -48,7 +64,9 @@ public class TouchManager : MonoBehaviour {
         thePick.transform.Translate(0,0,-8f, Space.World);
         // GameStateManager.timeFrozen = true;
         if(thePick.GetComponent<Person>().isTheOne == true) {
+		  foundThePick = true;
           modal.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load("congrats-yes", typeof(Sprite));
+
         }
     }
   }
