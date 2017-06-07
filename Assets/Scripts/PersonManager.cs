@@ -6,7 +6,7 @@ public class PersonManager : MonoBehaviour {
   public GameObject personPrefab;
   public Person theOne;
   private List<Person> people;
-	private int numPeople =25;
+	private int numPeople =35;
 
 	void Start () {
     people = new List<Person>();

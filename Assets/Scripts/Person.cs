@@ -48,7 +48,7 @@ public class Person : MonoBehaviour {
     d.room = randomRoom;
     d.activity = Activity.Nothing;
     d.time = 300;
-	d.roomTarget = Random.Range (0.2f, .8f);
+	  d.roomTarget = Random.Range (0.2f, .8f);
     return d;
   }
 
@@ -182,7 +182,7 @@ public class Person : MonoBehaviour {
 	target.z = 0;
 	Vector3 delta = target - transform.position;
 	delta.z = 0;
-	Debug.DrawLine (transform.position, target);
+	//Debug.DrawLine (transform.position, target);
 	//Debug.Log ("Delta: "+delta);
 	//Debug.Log ("Magnitude: "+delta.magnitude);
     return delta.magnitude <= 0.5f;

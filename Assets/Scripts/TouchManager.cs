@@ -12,12 +12,17 @@ public class TouchManager : MonoBehaviour {
 	public float timeToGameOver;
 	private float timer;
 	private bool foundThePick;
+	private Vector3 mouseDown;
+	private Vector3 mouseUp;
+	public float mouseDelta;
+	private bool clickOver;
 	//private bool loadGameOver;
 
 	// Use this for initialization
 	void Start () {
 		GameObject.Find("GameStateManager").GetComponent<GameStateManager>();
 		timer = timeToGameOver;
+		clickOver = false;
 		//loadGameOver = false;
 	}
 	
@@ -32,11 +37,23 @@ public class TouchManager : MonoBehaviour {
       }
     }
     if(Input.GetMouseButtonDown(0)) {
-      registerClick(Input.mousePosition);
+			clickOver = false;
+			mouseDown = Input.mousePosition;
+		//	mouseUp = Vector3.zero;
+      
     }
+		if (Input.GetMouseButtonUp (0)) {
+			mouseUp = Input.mousePosition;
+			clickOver = true;
+		//	mouseDown = Vector3.zero;
+		}
+		if (clickOver && Vector3.Distance (mouseDown, mouseUp) <= mouseDelta) {
+				registerClick (mouseUp);
+			  clickOver = false;
+		}
 	if (foundThePick) {
 			timer -= Time.deltaTime;
-			Debug.Log (timer);
+			//Debug.Log (timer);
 			if (timer < 0) {
 				SceneManager.LoadScene (2);
 		}
@@ -64,7 +81,7 @@ public class TouchManager : MonoBehaviour {
         thePick.transform.Translate(0,0,-8f, Space.World);
         // GameStateManager.timeFrozen = true;
         if(thePick.GetComponent<Person>().isTheOne == true) {
-		  foundThePick = true;
+		 		  foundThePick = true;
           modal.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load("congrats-yes", typeof(Sprite));
 
         }
