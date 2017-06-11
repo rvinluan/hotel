@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomVignetteImageEffect : MonoBehaviour {
-  public Texture  vignetteTexture;
-
+namespace UnityStandardAssets.ImageEffects {
+public class CustomVignetteImageEffect : ImageEffectBase {
+  public Color fogColor;
+  public float radius;
+  public float smoothness;
+  
   // Called by camera to apply image effect
   void OnRenderImage (RenderTexture source, RenderTexture destination) {
-    // Graphics.Blit (source, destination, material);
+    material.SetColor ("_Fog", fogColor);
+    material.SetFloat ("_Radius", radius);
+    material.SetFloat ("_Smoothness", smoothness);
+    Graphics.Blit (source, destination, material);
   }
+}
 }
