@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 2c63fbf391d824af9985fdd3341dc1c2
+timeCreated: 1497215059
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Input Serif Narrow
+  fontNames:
+  - Input Serif Narrow
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

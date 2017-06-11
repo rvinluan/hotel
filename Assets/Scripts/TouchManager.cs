@@ -77,16 +77,17 @@ public class TouchManager : MonoBehaviour {
     if(hitNum > 0 && numGuesses<=maxGuesses){
         Collider2D hit = results[0];
 				thePick = hit.gameObject;
-			if (numGuesses < maxGuesses) {
+			if (numGuesses < maxGuesses && thePick !=null && !foundThePick) {
 				createModal ();
 			}
+			if (thePick.CompareTag("menu")){
+				SceneManager.LoadScene ("MainMenu");
+			}
+			if (thePick.CompareTag("new_game")){
+				SceneManager.LoadScene ("Gameplay");
+			}
     }
-		if (thePick.CompareTag("menu")){
-			SceneManager.LoadScene (0);
-		}
-		if (thePick.CompareTag("new_game")){
-			SceneManager.LoadScene (1);
-		}
+
   }
 
 	void createModal(){
@@ -106,10 +107,9 @@ public class TouchManager : MonoBehaviour {
 
 		if (thePick.transform.childCount == 0) {
 			//first build a modal saying whether the guess is right or wrong
-
+			numGuesses++;
 			modal = Instantiate (congratsObjectPrefab, modalxy, Quaternion.identity) as GameObject;
 			modal.transform.parent = thePick.transform;
-			numGuesses++;
 			//then create proper message component
 			// if you find the right one
 			if (thePick.GetComponent<Person> ().isTheOne == true) {

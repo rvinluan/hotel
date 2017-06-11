@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 204eaf7f455c7430c92528d78afbe1c6
+timeCreated: 1497215059
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Input Sans Narrow
+  fontNames:
+  - Input Sans Narrow
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1a87ec626bd674bbba91b3f846ac1663, type: 3}
+  - {fileID: 12800000, guid: 07046ab8381e3430abbd1cd68a7054d9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

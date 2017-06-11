@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 740a2dd4482854c65868d1d8d718ace6
+timeCreated: 1497215059
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Input Serif Narrow
+  fontNames:
+  - Input Serif Narrow
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 32bc79c29ed134974ac7e53ac44328a3, type: 3}
+  - {fileID: 12800000, guid: 6df702c3a9f484711ac8c3cecf60487d, type: 3}
+  - {fileID: 12800000, guid: 2c63fbf391d824af9985fdd3341dc1c2, type: 3}
+  - {fileID: 12800000, guid: 3e3a8ef49d92c495faa40bb79fbeacce, type: 3}
+  - {fileID: 12800000, guid: 714cd9e9cd8994548ae9595620023ff1, type: 3}
+  - {fileID: 12800000, guid: 5bda845a426cb4c94bdf2e3a819cf87b, type: 3}
+  - {fileID: 12800000, guid: 5ce05b0babd3047b5abcae54e732b2c1, type: 3}
+  - {fileID: 12800000, guid: 66e9f71b488ef4ea7b109723a9edaf25, type: 3}
+  - {fileID: 12800000, guid: 6091055c2f504498db5f8363f4c93cb3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
