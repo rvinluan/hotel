@@ -79,8 +79,9 @@ public class Person : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    if(!GameStateManager.timeFrozen || (GameStateManager.timeFrozen && isTheOne) ) {
-      FollowRoute();
+//    if(!GameStateManager.timeFrozen || (GameStateManager.timeFrozen && isTheOne) ) {
+		if(!GameStateManager.timeFrozen) {
+			FollowRoute();
     }
     // if(isTheOne) {
     //   transform.localScale = new Vector3(1,1,1);
