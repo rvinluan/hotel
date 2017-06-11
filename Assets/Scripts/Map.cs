@@ -61,9 +61,20 @@ public class Map : MonoBehaviour {
     "Bedroom3a|Bedroom1a|Elevator|Bedroom1b|Bedroom1a|Bedroom1b|Bedroom1a",
     "Bar|Elevator|Restaurant",
     "Lobby",
-    "Parking",
     "Kitchen|Elevator|Storage"
   };
+
+	private static string[] map2 = new string[] {
+		"Greenhouse|Roof",
+		"Pool",
+		"Bar|Elevator|Restaurant",
+		"Bedroom1a|Bedroom3b|Elevator|Bedroom2b|Bedroom2c",
+		"Bedroom3a|Bedroom1a|Elevator|Bedroom1b|Bedroom1a|Bedroom1b|Bedroom1a",
+		"Gym|Elevator|Office",
+		"Lobby",
+		"Kitchen|Elevator|Storage"
+	};
+
 
   private static string[] currentMap = map0;
 

@@ -7,7 +7,6 @@ public class CustomVignetteImageEffect : MonoBehaviour {
 
   // Called by camera to apply image effect
   void OnRenderImage (RenderTexture source, RenderTexture destination) {
-    material.SetTexture ("_RampTex", textureRamp);
-    Graphics.Blit (source, destination, material);
+    // Graphics.Blit (source, destination, material);
   }
 }
