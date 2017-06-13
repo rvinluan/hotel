@@ -36,28 +36,32 @@ public class TouchManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
   	//check for touches
+    Debug.Log(Input.touchCount);
     for(int i = 0; i < Input.touchCount; i++) {
       Touch touch = Input.GetTouch(i);
       if (touch.phase == TouchPhase.Ended && touch.tapCount == 1) {
-        Vector3 position = Camera.main.ScreenToWorldPoint(touch.position);
+        Vector3 position = touch.position;
+        Debug.Log("touch position:" + touch.position);
         registerClick(position);
       }
     }
-    if(Input.GetMouseButtonDown(0)) {
-			clickOver = false;
-			mouseDown = Input.mousePosition;
-		//	mouseUp = Vector3.zero;
-      
+    if(Input.touchCount == 0) {
+      if(Input.GetMouseButtonDown(0)) {
+  			clickOver = false;
+  			mouseDown = Input.mousePosition;
+  		//	mouseUp = Vector3.zero;      
+      }
+  		if (Input.GetMouseButtonUp (0)) {
+  			mouseUp = Input.mousePosition;
+  			clickOver = true;
+  		//	mouseDown = Vector3.zero;
+  		}
+  		if (clickOver && Vector3.Distance (mouseDown, mouseUp) <= mouseDelta) {
+          Debug.Log("mouse position:" + mouseUp);
+  				registerClick (mouseUp);
+  			  clickOver = false;
+  		}
     }
-		if (Input.GetMouseButtonUp (0)) {
-			mouseUp = Input.mousePosition;
-			clickOver = true;
-		//	mouseDown = Vector3.zero;
-		}
-		if (clickOver && Vector3.Distance (mouseDown, mouseUp) <= mouseDelta) {
-				registerClick (mouseUp);
-			  clickOver = false;
-		}
 //	if (foundThePick) {
 //			timer -= Time.deltaTime;
 //			//Debug.Log (timer);
@@ -99,7 +103,7 @@ public class TouchManager : MonoBehaviour {
 		//find the center of the person
 		modalxy.y += 1f;
 		//start camera pan to hit location
-		StartCoroutine(panTo(hitxy));
+		// StartCoroutine(panTo(hitxy));
 
 		// if the target hasn't yet been tapped (no children prefabs instantiated)
 		// the we will build a modal
