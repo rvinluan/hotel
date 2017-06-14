@@ -36,9 +36,9 @@ public class TouchManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
   	//check for touches
-    Debug.Log(Input.touchCount);
+		Debug.Log(Input.touchCount);
     for(int i = 0; i < Input.touchCount; i++) {
-      Touch touch = Input.GetTouch(i);
+    	Touch touch = Input.GetTouch(i);
       if (touch.phase == TouchPhase.Ended && touch.tapCount == 1) {
         Vector3 position = touch.position;
         Debug.Log("touch position:" + touch.position);
@@ -57,7 +57,7 @@ public class TouchManager : MonoBehaviour {
   		//	mouseDown = Vector3.zero;
   		}
   		if (clickOver && Vector3.Distance (mouseDown, mouseUp) <= mouseDelta) {
-          Debug.Log("mouse position:" + mouseUp);
+        //  Debug.Log("mouse position:" + mouseUp);
   				registerClick (mouseUp);
   			  clickOver = false;
   		}
