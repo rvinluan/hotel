@@ -9,25 +9,23 @@ public class MainMenuHandler : MonoBehaviour {
 	private bool isLoadingScene=false;
 
 	void Update(){
-		if (Input.GetMouseButtonDown (0)) {
-			Debug.Log ("Mouse position: " + Input.mousePosition);
-			if (isLoadingScene) {
-				return;
-			}
+		if (isLoadingScene) {
+			return;
+		}else if (Input.GetMouseButtonDown (0)) {
+			//Debug.Log ("Mouse position: " + Input.mousePosition);
 			registerClick (Input.mousePosition);
 		}
-
 	}
 
 	void registerClick(Vector3 pos){
-		Debug.Log ("in register click");
+	//	Debug.Log ("in register click");
 		Vector2 p = Camera.main.ScreenToWorldPoint(pos);
-		Debug.Log ("p: " + p);
+		//Debug.Log ("p: " + p);
 
 		Collider2D[] results = new Collider2D[5];
 		int hitNum = Physics2D.OverlapPointNonAlloc(p, results);
 
-		Debug.Log ("hitNum: "+ hitNum);
+	//	Debug.Log ("hitNum: "+ hitNum);
 		if (hitNum > 0) {
 			Collider2D hit = results [0];
 			GameObject target = hit.gameObject;

@@ -22,6 +22,7 @@ public class TouchManager : MonoBehaviour {
 	private bool clickOver;
 	private int maxGuesses = 3;
 	private int numGuesses = 0;
+	private Vector3 lastModal;
 
 	//private bool loadGameOver;
 
@@ -36,7 +37,7 @@ public class TouchManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
   	//check for touches
-		Debug.Log(Input.touchCount);
+		//Debug.Log(Input.touchCount);
     for(int i = 0; i < Input.touchCount; i++) {
     	Touch touch = Input.GetTouch(i);
       if (touch.phase == TouchPhase.Ended && touch.tapCount == 1) {
@@ -57,21 +58,11 @@ public class TouchManager : MonoBehaviour {
   		//	mouseDown = Vector3.zero;
   		}
   		if (clickOver && Vector3.Distance (mouseDown, mouseUp) <= mouseDelta) {
-        //  Debug.Log("mouse position:" + mouseUp);
+          Debug.Log("mouse position:" + mouseUp);
   				registerClick (mouseUp);
   			  clickOver = false;
   		}
     }
-//	if (foundThePick) {
-//			timer -= Time.deltaTime;
-//			//Debug.Log (timer);
-//			if (timer < 0) {
-//				SceneManager.LoadScene (2);
-//		}
-//
-//	}
-
-
 	}
 
   void registerClick(Vector3 pos) {
@@ -102,6 +93,10 @@ public class TouchManager : MonoBehaviour {
 		modalxy.z = 1f;
 		//find the center of the person
 		modalxy.y += 1f;
+		Vector3 messagexy = modalxy;
+		messagexy.z -= .5f;
+
+
 		//start camera pan to hit location
 		// StartCoroutine(panTo(hitxy));
 
@@ -111,6 +106,7 @@ public class TouchManager : MonoBehaviour {
 
 		if (thePick.transform.childCount == 0) {
 			//first build a modal saying whether the guess is right or wrong
+			float z_delta = 0f;
 			numGuesses++;
 			modal = Instantiate (congratsObjectPrefab, modalxy, Quaternion.identity) as GameObject;
 			modal.transform.parent = thePick.transform;
@@ -119,7 +115,8 @@ public class TouchManager : MonoBehaviour {
 			if (thePick.GetComponent<Person> ().isTheOne == true) {
 				foundThePick = true;
 				modal.GetComponent<SpriteRenderer> ().sprite = (Sprite)Resources.Load ("congrats-yes", typeof(Sprite));
-				message = Instantiate (youWinObjectPrefab, modalxy, Quaternion.identity) as GameObject;
+				message = Instantiate (youWinObjectPrefab, lastModal, Quaternion.identity) as GameObject;
+				z_delta = 1f;
 			} 
 			// if you didn't find the right one but still have guesses left
 			else if(numGuesses<maxGuesses) {
@@ -128,7 +125,8 @@ public class TouchManager : MonoBehaviour {
 			}
 			// if you didn't find the right one and no guesses left
 			else if(numGuesses==maxGuesses) {
-				message = Instantiate (gameOverObjectPrefab, modalxy, Quaternion.identity) as GameObject;
+				message = Instantiate (gameOverObjectPrefab, messagexy, Quaternion.identity) as GameObject;
+				z_delta = 1f;
 			}
 				
 			message.transform.parent = thePick.transform;
@@ -137,8 +135,8 @@ public class TouchManager : MonoBehaviour {
 
 			StartCoroutine (growCongratsModal ());
 			Vector3 message_position = message.gameObject.transform.position;
-			thePick.transform.position= new Vector3 (thePick.transform.position.x, thePick.transform.position.y, -8);
-			message.gameObject.transform.position = new Vector3 (message_position.x,message_position.y-1.5f, message_position.z-8);
+			thePick.transform.position= new Vector3 (thePick.transform.position.x, thePick.transform.position.y, -7-z_delta);
+			message.gameObject.transform.position = new Vector3 (message_position.x,message_position.y-1.5f, message_position.z-7-z_delta);
 
 		}
 		// GameStateManager.timeFrozen = true;
