@@ -115,7 +115,7 @@ public class TouchManager : MonoBehaviour {
 			if (thePick.GetComponent<Person> ().isTheOne == true) {
 				foundThePick = true;
 				modal.GetComponent<SpriteRenderer> ().sprite = (Sprite)Resources.Load ("congrats-yes", typeof(Sprite));
-				message = Instantiate (youWinObjectPrefab, lastModal, Quaternion.identity) as GameObject;
+				message = Instantiate (youWinObjectPrefab, messagexy, Quaternion.identity) as GameObject;
 				z_delta = 1f;
 			} 
 			// if you didn't find the right one but still have guesses left
